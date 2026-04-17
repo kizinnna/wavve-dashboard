@@ -3,16 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Wavve Dashboard Mockup</title>
+  <title>Wavve Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header class="topbar">
     <div class="brand">
       <h1>Wavve Analytics Dashboard</h1>
-      <p>월간 보고서 느낌을 살린 웹 대시보드 시안</p>
+      <p>월간 리포트 웹 시안</p>
     </div>
+
     <div class="filters">
       <select><option>2026년</option></select>
       <select><option>3월</option></select>
@@ -23,112 +24,96 @@
 
   <main class="container">
     <section class="hero">
-      <div>
-        <div class="hero-title">
-          <h2>웨이브 월간 리포트</h2>
-          <span>2026년 3월</span>
-        </div>
-
-        <div class="goal-box">
-          <h3>2026 목표 달성 현황</h3>
-          <div class="goal-row">
-            <strong>매출</strong>
-            <div class="goal-bar"><div class="goal-fill" style="width: 62%"></div></div>
-            <strong>62.0%</strong>
-            <span class="subtle">누적 17.8억 원</span>
-          </div>
-          <div class="goal-row">
-            <strong>저작권료</strong>
-            <div class="goal-bar"><div class="goal-fill" style="width: 54%"></div></div>
-            <strong>54.0%</strong>
-            <span class="subtle">누적 13.2억 원</span>
-          </div>
-        </div>
-
-        <div class="mini-note">
-          <span>보고서형 구조 + 웹형 인터랙션</span>
-          <span>월 선택 / 필터 / 세부표 연동 가능</span>
-        </div>
+      <div class="hero-heading inline">
+        <h2>웨이브 월간 리포트</h2>
+        <div class="hero-date">2026년 3월</div>
       </div>
 
-      <div class="summary-grid">
-        <div class="mini-card">
-          <div class="label">총매출</div>
-          <div class="value">13.24억</div>
-          <div class="delta down">▼ 전월 대비 0.9%</div>
+      <div class="goal-box goal-box-full">
+        <h3>2025 목표 달성 현황</h3>
+
+        <div class="goal-row">
+          <strong class="goal-label">매출</strong>
+          <div class="goal-bar">
+            <div class="goal-fill" style="width: 62%"></div>
+          </div>
+          <strong class="goal-rate">13.4%</strong>
+          <span class="goal-meta">누적 6,876,543,678원</span>
         </div>
-        <div class="mini-card">
-          <div class="label">저작권료</div>
-          <div class="value">13.24억</div>
-          <div class="delta down">▼ 전월 대비 0.9%</div>
-        </div>
-        <div class="mini-card">
-          <div class="label">유료가입자</div>
-          <div class="value">199.4만</div>
-          <div class="delta down">▼ 전년 동기 15.7%</div>
-        </div>
-        <div class="mini-card">
-          <div class="label">KBS 점유율</div>
-          <div class="value">13.4%</div>
-          <div class="delta up">▲ 목표 대비 1.2%p</div>
+
+        <div class="goal-row">
+          <strong class="goal-label">저작권료</strong>
+          <div class="goal-bar">
+            <div class="goal-fill goal-fill-soft" style="width: 44%"></div>
+          </div>
+          <strong class="goal-rate">13.4%</strong>
+          <span class="goal-meta">누적 6,876,543,678원</span>
         </div>
       </div>
     </section>
 
-    <section class="grid-2">
-      <div class="card">
-        <div class="card-header">
-          <h3>매출 및 수익 추이</h3>
-          <span class="subtle">월별 매출 / 수익 비교</span>
-        </div>
-        <div class="chart-wrap"><canvas id="trendChart"></canvas></div>
+    <section class="card kpi-section">
+      <div class="card-header">
+        <h3>당월 주요 지표</h3>
+        <span class="subtle">핵심 수치 요약</span>
       </div>
-      <div class="card">
-        <div class="card-header">
-          <h3>당월 주요 지표</h3>
-          <span class="subtle">핵심 수치 요약</span>
+
+      <div class="kpi-row only-four">
+        <div class="kpi-cell">
+          <div class="title">총매출</div>
+          <div class="num">13.24억 원</div>
+          <div class="meta">전월대비 ↓ 0.9%<br>전년동기대비 ↓ 15.7%</div>
         </div>
-        <div class="split">
-          <div class="stat-list">
-            <div class="stat-item">
-              <div class="name">3월 목표</div>
-              <div class="num">15.06억</div>
-            </div>
-            <div class="stat-item">
-              <div class="name">당월 손익</div>
-              <div class="num">1.55억</div>
-            </div>
-            <div class="stat-item">
-              <div class="name">KBS 비중</div>
-              <div class="num">89.1%</div>
-            </div>
-          </div>
-          <div class="chart-wrap sm"><canvas id="goalChart"></canvas></div>
+
+        <div class="kpi-cell">
+          <div class="title">저작권료</div>
+          <div class="num">13.24억 원</div>
+          <div class="meta">전월대비 ↓ 0.9%<br>전년동기대비 ↓ 15.7%</div>
+        </div>
+
+        <div class="kpi-cell">
+          <div class="title">KBS점유율</div>
+          <div class="num">13.4%</div>
+          <div class="meta">전월대비 ↓ 0.3%p<br>전년동기대비 ↓ 1.2%p</div>
+        </div>
+
+        <div class="kpi-cell">
+          <div class="title">유료가입자</div>
+          <div class="num">199.4만 명</div>
+          <div class="meta">전월대비 ↓ 0.9%<br>전년동기대비 ↓ 15.7%</div>
         </div>
       </div>
     </section>
 
-    <section class="grid-3">
-      <div class="card">
-        <div class="card-header">
-          <h3>서비스별 매출 구성</h3>
-          <span class="subtle">실시간 / NVOD / VOD / 광고</span>
-        </div>
-        <div class="chart-wrap sm"><canvas id="serviceChart"></canvas></div>
+    <section class="card">
+      <div class="card-header">
+        <h3>2025년도 매출 추이</h3>
+        <span class="subtle">작년 / 올해 비교</span>
       </div>
-      <div class="card">
-        <div class="card-header">
-          <h3>점유율 현황</h3>
-          <span class="subtle">주요 경쟁사 비교</span>
-        </div>
-        <div class="chart-wrap sm"><canvas id="shareChart"></canvas></div>
+      <div class="chart-wrap chart-md">
+        <canvas id="trendChart"></canvas>
       </div>
+    </section>
+
+    <section class="grid-2 wide-analytics">
       <div class="card">
         <div class="card-header">
-          <h3>가입자 추이</h3>
-          <span class="subtle">최근 6개월 유료가입자</span>
+          <h3>유료가입자 추이</h3>
+          <span class="subtle">2024년 / 2025년 비교</span>
         </div>
-        <div class="chart-wrap sm"><canvas id="subscriberChart"></canvas></div>
+        <div class="chart-wrap chart-lg">
+          <canvas id="subscriberChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <h3>최근 6개월 점유율 추이</h3>
+          <span class="subtle">KBS 점유율</span>
+        </div>
+        <div class="chart-wrap chart-lg">
+          <canvas id="shareTrendChart"></canvas>
+        </div>
       </div>
     </section>
 
@@ -136,59 +121,110 @@
       <div class="card">
         <div class="card-header">
           <h3>당월 수지 요약</h3>
-          <span class="subtle">매출 / 비용 / 손익</span>
+          <span class="subtle">매출 / 비용 / 상세</span>
         </div>
-        <div class="split">
+
+        <div class="section-stack">
           <div>
-            <div class="section-title">매출 상세</div>
+            <p class="section-label">매출 상세</p>
             <div class="table-wrap">
               <table>
                 <thead>
-                  <tr><th>구분</th><th>금액</th></tr>
+                  <tr>
+                    <th>매출처</th>
+                    <th>기여도</th>
+                    <th class="num">전월매출</th>
+                    <th class="num">당월매출</th>
+                    <th class="num">증감</th>
+                  </tr>
                 </thead>
                 <tbody>
-                  <tr><td>KBS</td><td>1,333,091,563</td></tr>
-                  <tr><td>KBSN</td><td>109,630,408</td></tr>
-                  <tr><td>광고</td><td>25,113,770</td></tr>
-                  <tr><td>영화</td><td>506,552</td></tr>
-                  <tr><td><strong>합계</strong></td><td><strong>1,468,347,261</strong></td></tr>
+                  <tr><td>KBS</td><td>89.1%</td><td class="num">214,105,464</td><td class="num">214,105,464</td><td class="num">+214,105,464</td></tr>
+                  <tr><td>실시간</td><td></td><td class="num">86,468,582</td><td class="num">86,468,582</td><td class="num">+86,468,582</td></tr>
+                  <tr><td>NVOD</td><td></td><td class="num">868,115,385</td><td class="num">868,115,385</td><td class="num">-868,115,385</td></tr>
+                  <tr><td>VOD</td><td></td><td class="num">1,168,689,431</td><td class="num">1,168,689,431</td><td class="num">-1,168,689,431</td></tr>
+                  <tr><td>KBSN</td><td>9.1%</td><td class="num">82,383,285</td><td class="num">82,383,285</td><td class="num">+82,383,285</td></tr>
+                  <tr><td>광고</td><td>1.2%</td><td class="num">13,015,134</td><td class="num">13,015,134</td><td class="num">-13,015,134</td></tr>
                 </tbody>
               </table>
             </div>
           </div>
-          <div>
-            <div class="section-title">비용 상세</div>
-            <div class="table-wrap">
-              <table>
-                <thead>
-                  <tr><th>구분</th><th>금액</th></tr>
-                </thead>
-                <tbody>
-                  <tr><td>KBS 저작권료</td><td>1,038,828,222</td></tr>
-                  <tr><td>KBSN 정산금</td><td>94,880,546</td></tr>
-                  <tr><td>외주사 정산금</td><td>165,164,799</td></tr>
-                  <tr><td>기타운영비</td><td>6,705,111</td></tr>
-                  <tr><td><strong>합계</strong></td><td><strong>1,312,920,414</strong></td></tr>
-                </tbody>
-              </table>
+
+          <div class="split">
+            <div>
+              <p class="section-label">매출 요약</p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>구분</th><th class="num">매출</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>KBS</td><td class="num">1,333,091,563원</td></tr>
+                    <tr><td>KBSN</td><td class="num">109,630,408원</td></tr>
+                    <tr><td>광고</td><td class="num">25,113,770원</td></tr>
+                    <tr><td>영화</td><td class="num">506,552원</td></tr>
+                    <tr><td>굿닥터(일본판)</td><td class="num">511,520원</td></tr>
+                    <tr><td><strong>매출 합계</strong></td><td class="num"><strong>1,468,347,261원</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div>
+              <p class="section-label">비용 요약</p>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr><th>구분</th><th class="num">비용</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>KBS 저작권료</td><td class="num">1,038,828,222원</td></tr>
+                    <tr><td>KBSN 정산금</td><td class="num">94,880,546원</td></tr>
+                    <tr><td>외주사 정산금</td><td class="num">165,164,799원</td></tr>
+                    <tr><td>KBS 브랜드사용료</td><td class="num">7,341,736원</td></tr>
+                    <tr><td>기타운영비</td><td class="num">6,705,111원</td></tr>
+                    <tr><td><strong>비용 합계</strong></td><td class="num"><strong>1,312,920,414원</strong></td></tr>
+                  </tbody>
+                </table>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="card">
         <div class="card-header">
-          <h3>프로그램 TOP 10</h3>
-          <span class="subtle">VOD 프로그램별 매출</span>
+          <h3>당월 매출 기준 프로그램 10개</h3>
+          <span class="subtle">프로그램명 / 매출</span>
         </div>
-        <div class="chart-wrap"><canvas id="programChart"></canvas></div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>순위</th>
+                <th>프로그램명</th>
+                <th class="num">매출</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1</td><td>가는정 오는정 이민정</td><td class="num">214,105,464</td></tr>
+              <tr><td>2</td><td>우리 연애 시뮬레이션</td><td class="num">168,000,000</td></tr>
+              <tr><td>3</td><td>연애의 참견</td><td class="num">131,464,755</td></tr>
+              <tr><td>4</td><td>러브 메이트</td><td class="num">86,468,582</td></tr>
+              <tr><td>5</td><td>스카우트6</td><td class="num">64,000,000</td></tr>
+              <tr><td>6</td><td>인간극장</td><td class="num">52,000,000</td></tr>
+              <tr><td>7</td><td>1박 2일</td><td class="num">48,300,000</td></tr>
+              <tr><td>8</td><td>사랑과 전쟁</td><td class="num">35,800,000</td></tr>
+              <tr><td>9</td><td>역사저널 그날</td><td class="num">24,500,000</td></tr>
+              <tr><td>10</td><td>영화 PPV</td><td class="num">506,552</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </section>
 
-    <section class="card">
-      <div class="card-header">
-        <h3>프로그램 상세 테이블</h3>
-        <span class="subtle">클릭 시 상세 페이지 또는 팝업 확장 가능</span>
-      </div>
+    <section class="card no-title-card">
       <div class="table-wrap">
         <table>
           <thead>
@@ -198,188 +234,22 @@
               <th>서비스유형</th>
               <th>프로그램명</th>
               <th>프로그램코드</th>
-              <th>매출금액</th>
-              <th>KBS저작권료</th>
-              <th>외부저작권료</th>
+              <th class="num">매출금액</th>
+              <th class="num">KBS저작권료</th>
+              <th class="num">외부저작권료</th>
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>2026-03</td>
-              <td><span class="pill">KBS</span></td>
-              <td>VOD</td>
-              <td>가는정 오는정 이민정</td>
-              <td>PGM0001</td>
-              <td>214,105,464</td>
-              <td>98,120,000</td>
-              <td>0</td>
-            </tr>
-            <tr>
-              <td>2026-03</td>
-              <td><span class="pill">KBSN</span></td>
-              <td>NVOD</td>
-              <td>연애의 참견</td>
-              <td>PGM0021</td>
-              <td>131,464,755</td>
-              <td>64,210,000</td>
-              <td>5,100,000</td>
-            </tr>
-            <tr>
-              <td>2026-03</td>
-              <td><span class="pill">자체수급</span></td>
-              <td>VOD</td>
-              <td>우리 연애 시뮬레이션</td>
-              <td>PGM0110</td>
-              <td>86,468,582</td>
-              <td>0</td>
-              <td>24,200,000</td>
-            </tr>
-            <tr>
-              <td>2026-03</td>
-              <td><span class="pill">영화</span></td>
-              <td>PPV</td>
-              <td>영화 PPV</td>
-              <td>PGM0901</td>
-              <td>506,552</td>
-              <td>0</td>
-              <td>220,000</td>
-            </tr>
+            <tr><td>2026-03</td><td><span class="pill">KBS</span></td><td>VOD</td><td>가는정 오는정 이민정</td><td>PGM0001</td><td class="num">214,105,464</td><td class="num">98,120,000</td><td class="num">0</td></tr>
+            <tr><td>2026-03</td><td><span class="pill">KBSN</span></td><td>NVOD</td><td>연애의 참견</td><td>PGM0021</td><td class="num">131,464,755</td><td class="num">64,210,000</td><td class="num">5,100,000</td></tr>
+            <tr><td>2026-03</td><td><span class="pill">자체수급</span></td><td>VOD</td><td>우리 연애 시뮬레이션</td><td>PGM0110</td><td class="num">86,468,582</td><td class="num">0</td><td class="num">24,200,000</td></tr>
+            <tr><td>2026-03</td><td><span class="pill">영화</span></td><td>PPV</td><td>영화 PPV</td><td>PGM0901</td><td class="num">506,552</td><td class="num">0</td><td class="num">220,000</td></tr>
           </tbody>
         </table>
       </div>
     </section>
   </main>
 
-  <script>
-    const defaultOptions = {
-      responsive: true,
-      maintainAspectRatio: false,
-      plugins: {
-        legend: {
-          labels: {
-            usePointStyle: true,
-            boxWidth: 10,
-            font: { family: 'Pretendard, Noto Sans KR, Arial' }
-          }
-        }
-      },
-      scales: {
-        x: {
-          grid: { display: false },
-          ticks: { color: '#6b7280' }
-        },
-        y: {
-          grid: { color: '#edf1f7' },
-          ticks: { color: '#6b7280' }
-        }
-      }
-    };
-
-    new Chart(document.getElementById('trendChart'), {
-      type: 'bar',
-      data: {
-        labels: ['1월','2월','3월','4월','5월','6월'],
-        datasets: [
-          {
-            type: 'line',
-            label: '2025년 매출',
-            data: [13.1, 13.9, 13.8, 13.9, 14.8, 14.7],
-            borderColor: '#2f5fd0',
-            backgroundColor: '#2f5fd0',
-            tension: 0.35,
-            yAxisID: 'y'
-          },
-          {
-            label: '2025년 수익',
-            data: [1.45, 1.58, 2.29, 1.57, 0.80, 1.55],
-            backgroundColor: '#a9c4ff',
-            borderRadius: 8,
-            yAxisID: 'y'
-          }
-        ]
-      },
-      options: {
-        ...defaultOptions,
-        scales: {
-          x: { grid: { display: false }, ticks: { color: '#6b7280' } },
-          y: { grid: { color: '#edf1f7' }, ticks: { color: '#6b7280' } }
-        }
-      }
-    });
-
-    new Chart(document.getElementById('goalChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['달성', '잔여'],
-        datasets: [
-          {
-            data: [54, 46],
-            backgroundColor: ['#2f5fd0', '#e6edff'],
-            borderWidth: 0
-          }
-        ]
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        cutout: '72%',
-        plugins: { legend: { display: false } }
-      }
-    });
-
-    new Chart(document.getElementById('serviceChart'), {
-      type: 'bar',
-      data: {
-        labels: ['1월','2월','3월'],
-        datasets: [
-          { label: '실시간', data: [2.1, 2.0, 2.4], backgroundColor: '#84aefb', borderRadius: 8 },
-          { label: 'NVOD', data: [1.2, 1.4, 1.1], backgroundColor: '#b7cafe', borderRadius: 8 },
-          { label: 'VOD', data: [8.3, 8.8, 9.1], backgroundColor: '#2f5fd0', borderRadius: 8 },
-          { label: '광고', data: [0.2, 0.3, 0.25], backgroundColor: '#cfd8ea', borderRadius: 8 }
-        ]
-      },
-      options: {
-        ...defaultOptions,
-        scales: {
-          x: { stacked: true, grid: { display: false }, ticks: { color: '#6b7280' } },
-          y: { stacked: true, grid: { color: '#edf1f7' }, ticks: { color: '#6b7280' } }
-        }
-      }
-    });
-
-    new Chart(document.getElementById('shareChart'), {
-      type: 'doughnut',
-      data: {
-        labels: ['KBS', 'MBC', 'SBS', '기타'],
-        datasets: [{ data: [14.7, 22.8, 29.0, 32.2], backgroundColor: ['#2f5fd0', '#7aa9ff', '#9dc0ff', '#dbe6ff'], borderWidth: 0 }]
-      },
-      options: { responsive: true, maintainAspectRatio: false, cutout: '64%' }
-    });
-
-    new Chart(document.getElementById('subscriberChart'), {
-      type: 'line',
-      data: {
-        labels: ['1월','2월','3월','4월','5월','6월'],
-        datasets: [{ label: '유료가입자(만명)', data: [226.8,219.7,207.7,202.8,199.5,197.7], borderColor: '#2f5fd0', backgroundColor: '#2f5fd0', tension: 0.35 }]
-      },
-      options: defaultOptions
-    });
-
-    new Chart(document.getElementById('programChart'), {
-      type: 'bar',
-      data: {
-        labels: ['가는정 오는정 이민정','우리 연애 시뮬레이션','연애의 참견','러브 메이트','스카우트6'],
-        datasets: [{ label: '매출', data: [214, 168, 131, 86, 64], backgroundColor: '#2f5fd0', borderRadius: 10 }]
-      },
-      options: {
-        indexAxis: 'y',
-        ...defaultOptions,
-        scales: {
-          x: { grid: { color: '#edf1f7' }, ticks: { color: '#6b7280' } },
-          y: { grid: { display: false }, ticks: { color: '#6b7280' } }
-        }
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
